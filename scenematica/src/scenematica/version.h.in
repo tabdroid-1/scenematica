@@ -1,0 +1,17 @@
+#pragma once
+
+namespace Scenematica {
+
+// clang-format off
+
+struct ApiVersion {
+    static constexpr unsigned Major = @PROJECT_VERSION_MAJOR@;
+    static constexpr unsigned Minor = @PROJECT_VERSION_MINOR@;
+    static constexpr unsigned Patch = @PROJECT_VERSION_PATCH@;
+};
+
+// clang-format on
+
+constexpr const char* const API_VERSION_STRING = "@PROJECT_VERSION@";
+
+}
