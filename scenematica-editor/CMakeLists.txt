@@ -40,9 +40,9 @@ if (ANDROID)
         ./scenematica
         )
 
-    add_subdirectory(${PROJECT_VENDOR_DIR}/maine-coon)
+    add_subdirectory(${PROJECT_VENDOR_DIR}/tabby)
 else()
-    add_subdirectory(${PROJECT_VENDOR_DIR}/maine-coon)
+    add_subdirectory(${PROJECT_VENDOR_DIR}/tabby)
 
     add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 endif()
@@ -50,7 +50,7 @@ endif()
 # Link libraries
 target_link_libraries(${PROJECT_NAME}
         scenematica
-        maine-coon
+        tabby
         )
 
 # Include directories
@@ -62,9 +62,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 include_directories(SYSTEM "src")
 include_directories(${SCENEMATICA_DIR}/src)
-include_directories(${PROJECT_VENDOR_DIR}/maine-coon/src)
-include_directories(${PROJECT_VENDOR_DIR}/maine-coon/vendor)
-include_directories(${PROJECT_VENDOR_DIR}/maine-coon/vendor/spdlog/include)
+include_directories(${PROJECT_VENDOR_DIR}/tabby/src)
+include_directories(${PROJECT_VENDOR_DIR}/tabby/vendor)
+include_directories(${PROJECT_VENDOR_DIR}/tabby/vendor/spdlog/include)
+include_directories(${PROJECT_VENDOR_DIR}/tabby/vendor/box2c/include)
 
 
 if (EMSCRIPTEN)

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <MaineCoon.h>
-#include <MaineCoon/Audio/AudioEngine.h>
+#include <Tabby.h>
+#include <Tabby/Audio/AudioEngine.h>
 #include <scenematica/level_registry.h>
 #include <scenematica/level.h>
 
@@ -9,7 +9,7 @@ namespace Editor {
 
 class MenuBase;
 
-class EditorLayer : public MaineCoon::Layer {
+class EditorLayer : public Tabby::Layer {
 public:
     EditorLayer();
 
@@ -19,7 +19,9 @@ public:
         LevelEditor
     };
 
+    virtual void OnUpdate(Tabby::Timestep dt) override;
     virtual void OnImGuiRender() override;
+    virtual void OnEvent(Tabby::Event& e) override;
 
     void CreateNewRegistry();
     void LoadRegistry();
@@ -32,13 +34,17 @@ public:
 
     void SetEditorState(EditorState state);
 
-    MaineCoon::Shared<Scenematica::Level> m_CurrentLevel;
-    MaineCoon::Shared<Scenematica::LevelRegistry> m_CurrentLevelRegistry;
+    void SetMenubarCallback(const std::function<void()>& menubarCallback) { m_MenubarCallback = menubarCallback; }
+
+    Tabby::Shared<Scenematica::Level> m_CurrentLevel;
+    Tabby::Shared<Scenematica::LevelRegistry> m_CurrentLevelRegistry;
 
 private:
     EditorState m_State;
 
-    std::unordered_map<EditorState, MaineCoon::Shared<Editor::MenuBase>> m_EditorMenus;
+    std::function<void()> m_MenubarCallback;
+
+    std::unordered_map<EditorState, Tabby::Shared<Editor::MenuBase>> m_EditorMenus;
 };
 
 }

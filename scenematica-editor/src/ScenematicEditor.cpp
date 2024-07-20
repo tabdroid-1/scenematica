@@ -1,11 +1,11 @@
-#include <MaineCoon/Core/Application.h>
-#include <MaineCoon/Core/EntryPoint.h>
+#include <Tabby/Core/Application.h>
+#include <Tabby/Core/EntryPoint.h>
 #include <EditorLayer.h>
 
-class Sandbox : public MaineCoon::Application {
+class Sandbox : public Tabby::Application {
 public:
-    Sandbox(const MaineCoon::ApplicationSpecification& specification)
-        : MaineCoon::Application(specification)
+    Sandbox(const Tabby::ApplicationSpecification& specification)
+        : Tabby::Application(specification)
     {
         PushLayer(new Editor::EditorLayer());
     }
@@ -15,7 +15,7 @@ public:
     }
 };
 
-MaineCoon::Application* MaineCoon::CreateApplication(MaineCoon::ApplicationCommandLineArgs args)
+Tabby::Application* Tabby::CreateApplication(Tabby::ApplicationCommandLineArgs args)
 {
     ApplicationSpecification spec;
     spec.Name = "Scenematica Level Editor";

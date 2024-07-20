@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <fstream>
+#include <filesystem>
 #include <functional>
 #include <iostream>
 #include <map>
