@@ -1,74 +1,15 @@
+Scenematica
+-------------------
+A 2D level standard.
 
-![MaineCoon](/resources/logo/Maine_Coon_Logo_Name_1024x256.png?raw=true "MaineCoon")
-
-Ligth weight crossplatform application framework.
-
-(Maine Coon is a cat breed, not a slur. -_-)
+This project has been created due to disticnt lack of *non-tiled* level editor(LDtk, tiled etc. are strictly tiled).
+This is for 2D level but there is plans to add full-fledged 3D capability.
 
 External Dependencies
 -------------------
 - Bundled with engine
-  - ImGui
-  - glad2
-  - sdl2 
-  - imguizmo
-  - spdlog
-  - stb_image
-  - tracy profiler
-  - OpenAL-Soft 
+  - nlohmann/json
 
-Supported Graphics Apis
------------------------
-- OpenGL 3.3
-- OpenGL 3.0 es
-
-Supported Platforms
--------------------
-- Linux
-- Windows (not tested)
-- MacOS
-- Web (not tested in a while)
-- Android (not tested in a while)
-
-Compiling
----------
-
-You might have to install some libraries for building.
-For building web install emscriptem from their git repo. Installing from package manager may give compilation errors.
-
-- Native
-  - For Unix:  
-    1. ```shell
-       git clone https://github.com/tabdroid-1/MaineCoon.git && mkdir MaineCoon/build && cd MaineCoon/build
-        ```
-    2. ```shell
-       cmake .. && make
-        ```
-    
-  - For Windows:  
-    1. ```shell
-        Todo
-        ```
-
-  - For Android 
-    1. ```shell
-       # It should build out of the box when built from Android Studio
-       ```
-
-- For Web 
-
-  1. ```shell
-     git clone https://github.com/tabdroid-1/MaineCoon.git && mkdir MaineCoon/build && cd MaineCoon/build
-        ```
-
-  2. ```shell
-     emcmake cmake .. && make
-        ```
-
-  3. ```shell
-     python3 -m http.server 8080
-        ```
-     
 Special Thanks
  --------------
 - Jonny Hotbody
