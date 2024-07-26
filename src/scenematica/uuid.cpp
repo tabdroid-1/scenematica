@@ -1,4 +1,4 @@
-#include <scenematica/core/uuid.h>
+#include <scenematica/uuid.h>
 
 namespace Scenematica {
 

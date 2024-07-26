@@ -52,7 +52,7 @@ public:
     }
 
     Element(const std::string& name)
-        : m_Name(std::to_string(m_UUID.Get()))
+        : m_Name(name)
         , m_IsVisible(true)
         , m_ParentElement(0)
         , m_Type(ElementType::Brush)

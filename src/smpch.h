@@ -27,4 +27,4 @@
 #include <vector>
 #include <typeindex>
 
-#include "scenematica/core/uuid.h"
+#include "scenematica/uuid.h"

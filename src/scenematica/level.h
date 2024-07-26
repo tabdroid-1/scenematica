@@ -23,7 +23,7 @@ public:
     Element& CreateElement(const std::string& name);
     Element& GetElement(UUID elementID);
 
-    const std::unordered_map<UUID, Element>& GetElementMap() { return m_ElementList; }
+    std::unordered_map<UUID, Element>& GetElementMap() { return m_ElementList; }
 
 private:
     std::string m_LevelName;
